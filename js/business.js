@@ -43,6 +43,18 @@ var Business = {
 
         if (Business.currentRound.filter(player => player).length >= Business.players.length) {
             console.info('All hands raised \\o/');
+
+            var result = Business.gameLogic.validate(...Business.currentRound);
+
+            for(var i = 0; i< result.length; ++i) {
+                if (result[i] === GameLogic.won) {
+                    console.log(`Player ${i + 1}: won`);
+                } else if (result[i] === GameLogic.lost) {
+                    console.log(`Player ${i + 1}: lost`);
+                } else {
+                    console.log(`Player ${i + 1}: drawn`);
+                }
+            }
         }
     },
 };

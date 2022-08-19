@@ -1,7 +1,7 @@
 window.addEventListener('load', function() {
     console.log('Hello world');
 
-    var game = {};
+    var game = new GameLogicRockPaperScissors();
     var foo = {name:'foo'};
     var bar = {name:'bar'};
     var baz = {name:'baz'};
@@ -9,9 +9,9 @@ window.addEventListener('load', function() {
     Business.reset(game);
     Business.setPlayers(foo, bar, baz);
 
-    Business.raiseHand(baz, 'x');
-    Business.raiseHand(bar, 'x');
-    Business.raiseHand(bar, 'y');
-    Business.raiseHand(bar, 'z');
-    Business.raiseHand(foo, 'x');
+    Business.raiseHand(baz, 'rock');
+    Business.raiseHand(bar, 'rock');
+    Business.raiseHand(bar, 'paper');
+    Business.raiseHand(bar, 'scissors');
+    Business.raiseHand(foo, 'rock');
 });
