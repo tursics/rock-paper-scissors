@@ -1,6 +1,4 @@
 window.addEventListener('load', function() {
-    console.log('Hello world');
-
     var game = new GameLogicRockPaperScissors();
     var foo = {name:'foo'};
     var bar = {name:'bar'};

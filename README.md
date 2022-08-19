@@ -13,6 +13,10 @@ No npm modules used.
 Just open the HTML file in your browser.
 That's it.
 
+## extendable
+
+The number of players is limited to be exact 2. But the business layer and the game logic supports a minimum of 2 players without a maximum number.
+
 ## compatibility
 
 The used 'rest parameters' syntax is not supported by **Internet Explorer**. More information: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
