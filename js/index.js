@@ -3,10 +3,12 @@ window.addEventListener('load', function() {
     var foo = {name:'foo'};
     var bar = {name:'bar'};
     var baz = {name:'baz'};
+    var playerRandom = new PlayerRandom('computer.random');
 
     Business.reset(game);
-    Business.setPlayers(foo, bar, baz);
+    Business.setPlayers(playerRandom, foo, bar, baz);
 
+    playerRandom.vote();
     Business.raiseHand(baz, 'rock');
     Business.raiseHand(bar, 'rock');
     Business.raiseHand(bar, 'paper');

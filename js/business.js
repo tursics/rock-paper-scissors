@@ -47,12 +47,14 @@ var Business = {
             var result = Business.gameLogic.validate(...Business.currentRound);
 
             for(var i = 0; i< result.length; ++i) {
+                var playerName = Business.players[i].name;
+                var playerFigure = Business.currentRound[i];
                 if (result[i] === GameLogic.won) {
-                    console.log(`Player ${i + 1}: won`);
+                    console.log(`Player ${playerName} won with ${playerFigure}`);
                 } else if (result[i] === GameLogic.lost) {
-                    console.log(`Player ${i + 1}: lost`);
+                    console.log(`Player ${playerName} lost with ${playerFigure}`);
                 } else {
-                    console.log(`Player ${i + 1}: drawn`);
+                    console.log(`Player ${playerName} drawn with ${playerFigure}`);
                 }
             }
         }
