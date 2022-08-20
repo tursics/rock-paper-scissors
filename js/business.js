@@ -2,6 +2,7 @@ var Business = {
     currentRound: [],
     gameLogic: null,
     players: [],
+    result: [],
 
     reset: function(gameLogic) {
         if (gameLogic) {
@@ -13,6 +14,7 @@ var Business = {
 
         Business.currentRound = [];
         Business.players = [];
+        Business.result = [];
 	},
 
     setPlayers: function(...players) {
@@ -46,23 +48,27 @@ var Business = {
         }
 
         Business.currentRound[Business.players.indexOf(player)] = figure;
+        EventSystem.callListeners('vote.player', {
+            player: Business.players.indexOf(player),
+            figure: figure,
+        });
 
         if (Business.currentRound.filter(player => player).length >= Business.players.length) {
-            console.info('All hands raised \\o/');
-
             var result = Business.gameLogic.validate(...Business.currentRound);
+            Business.result = [];
 
             for(var i = 0; i< result.length; ++i) {
-                var playerName = Business.players[i].name;
-                var playerFigure = Business.currentRound[i];
-                if (result[i] === GameLogic.won) {
-                    console.log(`Player ${playerName} won with ${playerFigure}`);
-                } else if (result[i] === GameLogic.lost) {
-                    console.log(`Player ${playerName} lost with ${playerFigure}`);
-                } else {
-                    console.log(`Player ${playerName} drawn with ${playerFigure}`);
-                }
+                Business.result.push({
+                    playerId: i,
+                    playerName: Business.players[i].name,
+                    playerFigure: Business.currentRound[i],
+                    score: result[i],
+                });
             }
+
+            Business.currentRound = [];
+
+            EventSystem.callListeners('vote.finish');
         }
     },
 };
