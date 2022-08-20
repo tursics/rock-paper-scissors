@@ -17,6 +17,8 @@ That's it.
 
 The number of players is limited to be exact 2. But the business layer and the game logic supports a minimum of 2 players without a maximum number.
 
+The player object is extendable. Currently only a computer "AI" with random choices is implemented. But you can write own versions.
+
 ## compatibility
 
 The used 'rest parameters' syntax is not supported by **Internet Explorer**. More information: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
