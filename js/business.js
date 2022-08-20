@@ -29,6 +29,12 @@ var Business = {
         }
     },
 
+    openVotes: function() {
+        Business.players.forEach(player => {
+            player.vote();
+        });
+    },
+
     raiseHand: function(player, figure) {
         if (!Business.players.includes(player)) {
             console.error('Unknown player');
