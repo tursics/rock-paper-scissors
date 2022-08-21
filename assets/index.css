@@ -22,6 +22,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: contain;
 	border: 4vh solid lightslategray;
+	border-bottom-width: 8vh;
 	border-radius: 5vh;
 	height: 33vh;
 	position: absolute;
@@ -50,7 +51,7 @@ body {
 .bottom button span {
 	background: #fff;
 	border-radius: 0 0 4vh 4vh;
-	bottom: -3vh;
+	bottom: -7vh;
 	height: 4vh;
 	left: -3vh;
 	line-height: 4vh;
@@ -64,19 +65,24 @@ body {
 .bottom button.menu {
 	background-image: url(list-solid.svg);
 }
-.bottom button.rock {
+.bottom button.rock,
+.score .figure.rock::before {
 	background-image: url(hand-back-fist-solid.svg);
 }
-.bottom button.paper {
+.bottom button.paper,
+.score .figure.paper::before {
 	background-image: url(hand-solid.svg);
 }
-.bottom button.scissors {
+.bottom button.scissors,
+.score .figure.scissors::before {
 	background-image: url(hand-scissors-solid.svg);
 }
-.bottom button.human {
+.bottom button.human,
+.score .player.human::before {
 	background-image: url(user-astronaut-solid.svg);
 }
-.bottom button.robot {
+.bottom button.robot,
+.score .player.robot::before {
 	background-image: url(robot-solid.svg);
 }
 
@@ -90,4 +96,59 @@ body {
 	font-size: 4vh;
 	margin: 5vh;
 	text-align: left;
+}
+
+.score {
+	margin: 5vh;
+}
+
+.score .player {
+	min-height: 4.5rem;
+	padding-left: 4.5rem;
+	position: relative;
+}
+.score .player::before,
+.score .player .figure::before {
+	background-color: lightslategray;
+	background-position: center	center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: .5rem solid lightslategray;
+	border-radius: 50%;
+	content: '';
+	left: 0;
+	padding: 1.5rem;
+	position: absolute;
+}
+.score .player.loose::before,
+.score .player.loose::after,
+.score .player.loose .figure::before {
+	background-color: lightcoral;
+	border-color: lightcoral;
+}
+.score .player.win::before,
+.score .player.win::after,
+.score .player.win .figure::before {
+	background-color: lightgreen;
+	border-color: lightgreen;
+}
+.score .player .figure::before {
+	left: 6rem;
+}
+
+.score .player::after {
+	background-color: lightslategray;
+	border-radius: 50%;
+	content: '';
+	left: 4.25rem;
+	padding: .75rem;
+	position: absolute;
+	top: 1.25rem;
+}
+
+.score .player .figure {
+	display: inline;
+}
+
+.score .player .figure .result {
 }

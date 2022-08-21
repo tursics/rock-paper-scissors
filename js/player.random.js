@@ -2,6 +2,7 @@ class PlayerRandom extends Player {
     constructor(id) {
         super();
 
+        this.className = 'robot';
         this.name = id;
         this.title = 'Stupid AI';
     }

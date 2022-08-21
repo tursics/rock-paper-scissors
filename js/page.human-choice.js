@@ -24,7 +24,7 @@ class PageHumanChoice extends Page {
         var figures = Business.gameLogic.figures.filter(element => classList.contains(element.className));
 
         if (figures.length !== 1) {
-            console.error('Figures misconfigured');
+            console.error('Figures misconfigured', figures);
             return;
         }
 

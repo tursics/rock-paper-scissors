@@ -2,7 +2,7 @@ class PageRoundResult extends Page {
     constructor() {
         super('round-result');
 
-        this.dynmaic = this.div.querySelector('.dynamic');
+        this.score = this.div.querySelector('.score');
         this.next = this.div.querySelector('.next');
         this.exit = this.div.querySelector('.exit');
 
@@ -17,6 +17,7 @@ class PageRoundResult extends Page {
 
         for(var i = 0; i< Business.result.length; ++i) {
             var playerName = Business.result[i].playerName;
+            var playerClass = Business.result[i].playerClass;
             var playerFigure = Business.result[i].playerFigure;
             var score = Business.result[i].score;
             var result = '';
@@ -28,14 +29,14 @@ class PageRoundResult extends Page {
             } else {
                 result = 'draw';
             }
-            html += `<div class="player">${playerName} <div class="figure">${playerFigure} <div class="result">${result}</div></div></div`;
+            html += `<div class="player ${playerClass} ${result}"><div class="figure ${playerFigure}"></div></div>`;
         }
 
         return html;
     }
 
     onShow() {
-        UI.pageRoundResult.dynmaic.innerHTML = UI.pageRoundResult.getHTML();
+        UI.pageRoundResult.score.innerHTML = UI.pageRoundResult.getHTML();
         UI.pageRoundResult.show();
     }
 

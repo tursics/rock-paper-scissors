@@ -69,6 +69,7 @@ var Business = {
                 Business.result.push({
                     playerId: i,
                     playerName: Business.players[i].name,
+                    playerClass: Business.players[i].className,
                     playerFigure: Business.currentRound[i],
                     score: result[i],
                 });
