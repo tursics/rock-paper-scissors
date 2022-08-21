@@ -36,7 +36,7 @@ class PageHumanChoice extends Page {
             return;
         }
 
-        var player = Business.getLocalHumanPlayer();
+        var player = Business.getHumanPlayer();
         Business.raiseHand(player, figures[0].name);
     }
 }
