@@ -17,6 +17,14 @@ var Business = {
         Business.result = [];
 	},
 
+    getLocalHumanPlayer: function() {
+        var players = Business.players.filter(player => player.isLocal && player.isHuman);
+        if (players.length > 0) {
+            return players[0];
+        }
+        return null;
+    },
+
     setPlayers: function(...players) {
         var filtered = players.filter(player => typeof player === 'object');
 

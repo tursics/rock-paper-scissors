@@ -24,9 +24,13 @@ window.addEventListener('load', function() {
         }
     });
 
+    UI.init();
+
     Business.reset(game);
     Business.setPlayers(playerRandom1, playerRandom2);
     Business.openVotes();
+
+    EventSystem.callListeners('ui.show.vote.human');
 
     // old test code
     /* var foo = {name:'foo'};

@@ -27,6 +27,7 @@ event name   | description
 -------------|------------
 vote.player  |A player has voted
 vote.finish  |All player has voted. It's time for the results
+ui.show.vote.human  |The local human player should vote
 
 ## compatibility
 
