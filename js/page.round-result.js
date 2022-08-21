@@ -2,6 +2,13 @@ class PageRoundResult extends Page {
     constructor() {
         super('round-result');
 
+        this.dynmaic = this.div.querySelector('.dynamic');
+        this.next = this.div.querySelector('.next');
+        this.exit = this.div.querySelector('.exit');
+
+        this.next.addEventListener('click', this.onNext);
+        this.exit.addEventListener('click', this.onExit);
+
         EventSystem.addListener('vote.finish', this.onShow);
     }
 
@@ -28,7 +35,19 @@ class PageRoundResult extends Page {
     }
 
     onShow() {
-        UI.pageRoundResult.div.innerHTML = UI.pageRoundResult.getHTML();
+        UI.pageRoundResult.dynmaic.innerHTML = UI.pageRoundResult.getHTML();
         UI.pageRoundResult.show();
+    }
+
+    onNext() {
+        UI.pageRoundResult.hide();
+
+        Business.openVotes();
+    }
+
+    onExit() {
+        UI.pageRoundResult.hide();
+
+        EventSystem.callListeners('ui.show.menu.main');
     }
 }

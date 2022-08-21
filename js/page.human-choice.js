@@ -5,20 +5,12 @@ class PageHumanChoice extends Page {
         this.rock = this.div.querySelector('.figure.rock');
         this.paper = this.div.querySelector('.figure.paper');
         this.scissors = this.div.querySelector('.figure.scissors');
-        this.cancel = this.div.querySelector('.cancel');
 
         this.rock.addEventListener('click', this.onVote);
         this.paper.addEventListener('click', this.onVote);
         this.scissors.addEventListener('click', this.onVote);
-        this.cancel.addEventListener('click', this.onCancel);
 
         EventSystem.addListener('ui.show.vote.human', this.onShow);
-    }
-
-    onCancel() {
-        UI.pageHumanChoice.hide();
-
-        console.error('user canceled');
     }
 
     onShow() {
