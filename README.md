@@ -17,7 +17,7 @@ That's it.
 
 The number of players is limited to be exact 2. But the business layer and the game logic supports a minimum of 2 players without a maximum number.
 
-The player object is extendable. Currently only a computer "AI" with random choices is implemented. But you can write own versions.
+The player object is extendable. Currently only a computer "AI" with random choices and a human local player is implemented. But you can write own versions.
 
 ## events
 
