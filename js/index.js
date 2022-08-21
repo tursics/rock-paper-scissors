@@ -7,22 +7,6 @@ window.addEventListener('load', function() {
         var playerName = Business.players[param.player].name;
         console.info(`Player ${playerName} vote: ${param.figure}`);
     });
-    EventSystem.addListener('vote.finish', function() {
-        console.info('All hands raised \\o/');
-
-        for(var i = 0; i< Business.result.length; ++i) {
-            var playerName = Business.result[i].playerName;
-            var playerFigure = Business.result[i].playerFigure;
-            var score = Business.result[i].score;
-            if (score === GameLogic.won) {
-                console.log(`Player ${playerName} won with ${playerFigure}`);
-            } else if (score === GameLogic.lost) {
-                console.log(`Player ${playerName} lost with ${playerFigure}`);
-            } else {
-                console.log(`Player ${playerName} drawn with ${playerFigure}`);
-            }
-        }
-    });
 
     UI.init();
 
@@ -30,7 +14,7 @@ window.addEventListener('load', function() {
     Business.setPlayers(playerRandom1, playerRandom2);
     Business.openVotes();
 
-    EventSystem.callListeners('ui.show.vote.human');
+    // EventSystem.callListeners('ui.show.vote.human');
 
     // old test code
     /* var foo = {name:'foo'};
