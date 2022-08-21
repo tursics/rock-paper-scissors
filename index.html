@@ -18,25 +18,34 @@
 </head>
 <body>
 	<div class="page" id="welcome">
-		<div>
-			Papier, Stein, Schere
+		<div class="title">
+			Stein, Papier, Schere
 		</div>
-		<button class="next">Weiter</button>
+		<div class="bottom">
+			<button class="next menu"><span>Weiter</span></button>
+		</div>
 	</div>
 	<div class="page hidden" id="main-menu">
-		<button class="playermode human-random">Mensch vs. Computer</button>
-		<button class="playermode random-random">Computer vs. Computer</button>
+		<div class="description">
+			Möchtest du gegen einen Computer spielen oder sollen 2 Computer gegeneinander spielen?
+		</div>
+		<div class="bottom">
+			<button class="playermode human human-random"><span>Ich</span></button>
+			<button class="playermode robot random-random"><span>Computer</span></button>
+		</div>
 	</div>
 	<div class="page hidden" id="human-choice">
-		<button class="figure rock">Stein</button>
-		<button class="figure paper">Papier</button>
-		<button class="figure scissors">Schere</button>
+		<div class="bottom">
+			<button class="figure rock"><span>Stein</span></button>
+			<button class="figure paper"><span>Papier</span></button>
+			<button class="figure scissors"><span>Schere</span></button>
+		</div>
 	</div>
 	<div class="page hidden" id="round-result">
 		<div class="dynamic"></div>
-		<div>
-			<button class="next">Nochmal</button>
-			<button class="exit">Beenden</button>
+		<div class="bottom">
+			<button class="next play"><span>Nochmal</span></button>
+			<button class="exit menu"><span>Hauptmenü</span></button>
 		</div>
 	</div>
 

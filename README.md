@@ -35,3 +35,7 @@ ui.show.vote.human  |The local human player should vote
 The used 'rest parameters' syntax is not supported by **Internet Explorer**. More information: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 The used JS class syntax is not supported by **Internet Explorer**. More information: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Classes
+
+## icons
+
+I use free icons from [fontawesome](https://fontawesome.com/icons/) and a modern color scheme from [hook](https://hookagency.com/blog/website-color-schemes-2020/).

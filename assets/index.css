@@ -6,3 +6,88 @@ body {
 .hidden {
 	display: none;
 }
+
+.bottom {
+	background-color: lightseagreen;
+	bottom: 0;
+	height: 25vh;
+	left: 0;
+	position: absolute;
+	right: 0;
+}
+
+.bottom button {
+	background: lightslategray;
+	background-position: center	center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border: 4vh solid lightslategray;
+	border-radius: 5vh;
+	height: 33vh;
+	position: absolute;
+	top: -25vh;
+    width: 28%;
+}
+.bottom button:nth-child(1):nth-last-child(1) {
+	left: 36%;
+}
+.bottom button:nth-child(1):nth-last-child(2) {
+	left: 14.666%;
+}
+.bottom button:nth-child(2):nth-last-child(1) {
+	left: 57.333%;
+}
+.bottom button:nth-child(1):nth-last-child(3) {
+	left: 4%;
+}
+.bottom button:nth-child(2):nth-last-child(2) {
+	left: 36%;
+}
+.bottom button:nth-child(3):nth-last-child(1) {
+	left: 68%;
+}
+
+.bottom button span {
+	background: #fff;
+	border-radius: 0 0 4vh 4vh;
+	bottom: -3vh;
+	height: 4vh;
+	left: -3vh;
+	line-height: 4vh;
+	position: absolute;
+	right: -3vh;
+}
+
+.bottom button.play {
+	background-image: url(play-solid.svg);
+}
+.bottom button.menu {
+	background-image: url(list-solid.svg);
+}
+.bottom button.rock {
+	background-image: url(hand-back-fist-solid.svg);
+}
+.bottom button.paper {
+	background-image: url(hand-solid.svg);
+}
+.bottom button.scissors {
+	background-image: url(hand-scissors-solid.svg);
+}
+.bottom button.human {
+	background-image: url(user-astronaut-solid.svg);
+}
+.bottom button.robot {
+	background-image: url(robot-solid.svg);
+}
+
+#welcome .title {
+	font-size: 10vh;
+	margin: 10vh 5vh;
+	text-align: center;
+}
+
+#main-menu .description {
+	font-size: 4vh;
+	margin: 5vh;
+	text-align: left;
+}
