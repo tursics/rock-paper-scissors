@@ -202,3 +202,25 @@ body {
 
 .score .player .figure .result {
 }
+
+.move-up {
+	opacity: 1;
+	transition: transform 400ms, opacity 400ms;
+}
+.move-up.do {
+	opacity: 0;
+	transform: translateY(-33vh) scale(2) !important;
+}
+.move-up:hover {
+	transform: translateY(-3vh);
+}
+
+.flip {
+	transition: transform 200ms;
+}
+.flip.do {
+	transform: rotateY(90deg) !important;
+}
+.flip:hover {
+	transform: rotateY(25deg);
+}

@@ -41,14 +41,26 @@ class PageRoundResult extends Page {
     }
 
     onNext() {
-        UI.pageRoundResult.hide();
+        var classList = UI.pageRoundResult.next.classList;
+        classList.add('do');
 
-        Business.openVotes();
+        window.setTimeout(function() {
+            UI.pageRoundResult.hide();
+            classList.remove('do');
+
+            Business.openVotes();
+        }, 400);
     }
 
     onExit() {
-        UI.pageRoundResult.hide();
+        var classList = UI.pageRoundResult.exit.classList;
+        classList.add('do');
 
-        EventSystem.callListeners('ui.show.menu.main');
+        window.setTimeout(function() {
+            UI.pageRoundResult.hide();
+            classList.remove('do');
+
+            EventSystem.callListeners('ui.show.menu.main');
+        }, 400);
     }
 }

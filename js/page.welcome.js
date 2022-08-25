@@ -8,8 +8,14 @@ class PageWelcome extends Page {
     }
 
     onNext() {
-        UI.pageWelcome.hide();
+        var classList = UI.pageWelcome.next.classList;
+        classList.add('do');
 
-        EventSystem.callListeners('ui.show.menu.main');
+        window.setTimeout(function() {
+            UI.pageWelcome.hide();
+            classList.remove('do');
+
+            EventSystem.callListeners('ui.show.menu.main');
+        }, 400);
     }
 }

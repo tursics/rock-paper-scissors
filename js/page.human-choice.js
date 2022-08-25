@@ -12,7 +12,7 @@ class PageHumanChoice extends Page {
         var html = '';
 
         Business.gameLogic.figures.forEach(figure => {
-			html += `<button class="figure ${figure.className}"><span>${i18n[figure.name]}</span></button>`;
+			html += `<button class="figure move-up ${figure.className}"><span>${i18n[figure.name]}</span></button>`;
         });
 
         UI.pageHumanChoice.bottom.innerHTML = html;
@@ -26,17 +26,22 @@ class PageHumanChoice extends Page {
     }
 
     onVote(event) {
-        UI.pageHumanChoice.hide();
-
         var classList = event.target.classList;
-        var figures = Business.gameLogic.figures.filter(element => classList.contains(element.className));
+        classList.add('do');
 
-        if (figures.length !== 1) {
-            console.error('Figures misconfigured', figures);
-            return;
-        }
+        window.setTimeout(function() {
+            UI.pageHumanChoice.hide();
+            classList.remove('do');
 
-        var player = Business.getHumanPlayer();
-        Business.raiseHand(player, figures[0].name);
+            var figures = Business.gameLogic.figures.filter(element => classList.contains(element.className));
+
+            if (figures.length !== 1) {
+                console.error('Figures misconfigured', figures);
+                return;
+            }
+
+            var player = Business.getHumanPlayer();
+            Business.raiseHand(player, figures[0].name);
+        }, 400);
     }
 }

@@ -30,39 +30,51 @@ class PageMainMenu extends Page {
 
     onTogglePlayer1() {
         var classList = UI.pageMainMenu.player1.classList;
+        classList.add('do');
 
-        if (classList.contains('human')) {
-            classList.remove('human');
-            classList.add('robot');
-            UI.pageMainMenu.player1.innerHTML = '<span>Computer</span>';
-        } else {
-            classList.remove('robot')
-            classList.add('human');
-            UI.pageMainMenu.player1.innerHTML = '<span>Ich</span>';
-        }
+        window.setTimeout(function() {
+            if (classList.contains('human')) {
+                classList.remove('human');
+                classList.add('robot');
+                UI.pageMainMenu.player1.innerHTML = '<span>Computer</span>';
+            } else {
+                classList.remove('robot')
+                classList.add('human');
+                UI.pageMainMenu.player1.innerHTML = '<span>Ich</span>';
+            }
+            classList.remove('do');
+        }, 200);
     }
 
     onTogglePlayer2() {
         var classList = UI.pageMainMenu.player2.classList;
+        classList.add('do');
 
-        if (!classList.contains('robot')) {
-            classList.add('robot');
-            UI.pageMainMenu.player2.innerHTML = '<span>Computer</span>';
-        }
+        window.setTimeout(function() {
+            if (!classList.contains('robot')) {
+                classList.add('robot');
+                UI.pageMainMenu.player2.innerHTML = '<span>Computer</span>';
+            }
+            classList.remove('do');
+        }, 200);
     }
 
     onToggleGameLogic() {
         var classList = UI.pageMainMenu.gameLogic.classList;
+        classList.add('do');
 
-        if (classList.contains('rock-paper-scissors')) {
-            classList.remove('rock-paper-scissors');
-            classList.add('rock-paper-scissors-lizard-spock');
-            UI.pageMainMenu.gameLogic.innerHTML = '<span>Mit Echse und Spock</span>';
-        } else {
-            classList.remove('rock-paper-scissors-lizard-spock');
-            classList.add('rock-paper-scissors');
-            UI.pageMainMenu.gameLogic.innerHTML = '<span>Stein Papier Schere</span>';
-        }
+        window.setTimeout(function() {
+            if (classList.contains('rock-paper-scissors')) {
+                classList.remove('rock-paper-scissors');
+                classList.add('rock-paper-scissors-lizard-spock');
+                UI.pageMainMenu.gameLogic.innerHTML = '<span>Mit Echse und Spock</span>';
+            } else {
+                classList.remove('rock-paper-scissors-lizard-spock');
+                classList.add('rock-paper-scissors');
+                UI.pageMainMenu.gameLogic.innerHTML = '<span>Stein Papier Schere</span>';
+            }
+            classList.remove('do');
+        }, 200);
     }
 
     getPlayerFromClassList(classList) {
@@ -86,15 +98,21 @@ class PageMainMenu extends Page {
     }
 
     onPlay() {
-        UI.pageMainMenu.hide();
+        var classList = UI.pageMainMenu.play.classList;
+        classList.add('do');
 
-        var gameLogic = UI.pageMainMenu.getGameLogicFromClassList(UI.pageMainMenu.gameLogic.classList);
-        Business.reset(gameLogic);
+        window.setTimeout(function() {
+            UI.pageMainMenu.hide();
+            classList.remove('do');
 
-        var player1 = UI.pageMainMenu.getPlayerFromClassList(UI.pageMainMenu.player1.classList);
-        var player2 = UI.pageMainMenu.getPlayerFromClassList(UI.pageMainMenu.player2.classList);
-        Business.setPlayers(player1, player2);
+            var gameLogic = UI.pageMainMenu.getGameLogicFromClassList(UI.pageMainMenu.gameLogic.classList);
+            Business.reset(gameLogic);
 
-        Business.openVotes();
+            var player1 = UI.pageMainMenu.getPlayerFromClassList(UI.pageMainMenu.player1.classList);
+            var player2 = UI.pageMainMenu.getPlayerFromClassList(UI.pageMainMenu.player2.classList);
+            Business.setPlayers(player1, player2);
+
+            Business.openVotes();
+        }, 400);
     }
 }
