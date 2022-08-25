@@ -2,18 +2,26 @@ class PageHumanChoice extends Page {
     constructor() {
         super('human-choice');
 
-        this.rock = this.div.querySelector('.figure.rock');
-        this.paper = this.div.querySelector('.figure.paper');
-        this.scissors = this.div.querySelector('.figure.scissors');
-
-        this.rock.addEventListener('click', this.onVote);
-        this.paper.addEventListener('click', this.onVote);
-        this.scissors.addEventListener('click', this.onVote);
+        this.bottom = this.div.querySelector('.bottom');
 
         EventSystem.addListener('ui.show.vote.human', this.onShow);
     }
 
     onShow() {
+        var i18n = {rock: 'Stein', 'paper':'Papier', 'scissors': 'Schere', 'lizard': 'Echse', 'spock': 'Spock'};
+        var html = '';
+
+        Business.gameLogic.figures.forEach(figure => {
+			html += `<button class="figure ${figure.className}"><span>${i18n[figure.name]}</span></button>`;
+        });
+
+        UI.pageHumanChoice.bottom.innerHTML = html;
+
+        Business.gameLogic.figures.forEach(figure => {
+            var elem = UI.pageHumanChoice.div.querySelector(`.figure.${figure.className}`);
+            elem.addEventListener('click', UI.pageHumanChoice.onVote);
+        });
+
         UI.pageHumanChoice.show();
     }
 

@@ -113,6 +113,14 @@ body {
 .score .figure.scissors::before {
 	background-image: url(hand-scissors-solid.svg);
 }
+.bottom button.lizard,
+.score .figure.lizard::before {
+	background-image: url(hand-lizard-solid.svg);
+}
+.bottom button.spock,
+.score .figure.spock::before {
+	background-image: url(hand-spock-solid.svg);
+}
 .bottom button.human,
 .score .player.human::before {
 	background-image: url(user-astronaut-solid.svg);
@@ -120,6 +128,12 @@ body {
 .bottom button.robot,
 .score .player.robot::before {
 	background-image: url(robot-solid.svg);
+}
+.bottom button.rock-paper-scissors {
+	background-image: url(hand-solid.svg);
+}
+.bottom button.rock-paper-scissors-lizard-spock {
+	background-image: url(hand-spock-solid.svg);
 }
 
 #welcome .title {
