@@ -1,4 +1,18 @@
+.blueberry {
+	color: #6B7A8F;
+}
+.apricot {
+	color: #F7882F;
+}
+.citrus {
+	color: #F7C331;
+}
+.applecore {
+	color: #DCC7AA;
+}
+
 body {
+	background: #DCC7AA;
 	margin: 0;
 	overflow: hidden;
 }
@@ -8,7 +22,7 @@ body {
 }
 
 .bottom {
-	background-color: lightseagreen;
+	background-color: #6B7A8F;
 	bottom: 0;
 	height: 25vh;
 	left: 0;
@@ -17,17 +31,28 @@ body {
 }
 
 .bottom button {
-	background: lightslategray;
+	background: #F7C331;
 	background-position: center	center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	border: 4vh solid lightslategray;
+	border: 4vh solid #F7C331;
 	border-bottom-width: 8vh;
 	border-radius: 5vh;
+	box-shadow: 0 .5vh 1.5vh #444;
 	height: 33vh;
 	position: absolute;
 	top: -25vh;
     width: 28%;
+}
+.bottom button::before {
+	border: #F7882F solid 1vh;
+	border-radius: 5vh;
+	bottom: -8vh;
+	content: '';
+	left: -4vh;
+	position: absolute;
+	right: -4vh;
+	top: -4vh;
 }
 .bottom button:nth-child(1):nth-last-child(1) {
 	left: 36%;
@@ -159,11 +184,11 @@ body {
 }
 .score .player::before,
 .score .player .figure::before {
-	background-color: lightslategray;
+	background-color: #F7C331;
 	background-position: center	center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	border: .5rem solid lightslategray;
+	border: .5rem solid #F7C331;
 	border-radius: 50%;
 	content: '';
 	left: 0;
@@ -187,7 +212,7 @@ body {
 }
 
 .score .player::after {
-	background-color: lightslategray;
+	background-color: #F7C331;
 	border-radius: 50%;
 	content: '';
 	left: 4.25rem;
