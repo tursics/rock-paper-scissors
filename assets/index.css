@@ -24,7 +24,8 @@ body {
 .bottom {
 	background-color: #6B7A8F;
 	bottom: 0;
-	height: 25vh;
+	box-shadow: 0 0 4vh 1vh #6B7A8F;
+	height: 20vh;
 	left: 0;
 	position: absolute;
 	right: 0;
@@ -32,6 +33,7 @@ body {
 
 .bottom button {
 	background: #F7C331;
+	background-image: linear-gradient(to bottom right, red, yellow);
 	background-position: center	center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -110,9 +112,11 @@ body {
 }
 
 .bottom button span {
-	background: #fff;
+	background: #eee;
 	border-radius: 0 0 4vh 4vh;
+	border-top: .5vh solid #F7882F;
 	bottom: -7vh;
+	color: #444;
 	height: 4vh;
 	left: -3vh;
 	line-height: 4vh;
@@ -121,44 +125,44 @@ body {
 }
 
 .bottom button.play {
-	background-image: url(play-solid.svg);
+	background-image: url(play-solid-light.svg);
 }
 .bottom button.menu {
-	background-image: url(list-solid.svg);
+	background-image: url(list-solid-light.svg);
 }
 .bottom button.rock,
 .score .figure.rock::before {
-	background-image: url(hand-back-fist-solid.svg);
+	background-image: url(hand-back-fist-solid-light.svg);
 }
 .bottom button.paper,
 .score .figure.paper::before {
-	background-image: url(hand-solid.svg);
+	background-image: url(hand-solid-light.svg);
 }
 .bottom button.scissors,
 .score .figure.scissors::before {
-	background-image: url(hand-scissors-solid.svg);
+	background-image: url(hand-scissors-solid-light.svg);
 }
 .bottom button.lizard,
 .score .figure.lizard::before {
-	background-image: url(hand-lizard-solid.svg);
+	background-image: url(hand-lizard-solid-light.svg);
 }
 .bottom button.spock,
 .score .figure.spock::before {
-	background-image: url(hand-spock-solid.svg);
+	background-image: url(hand-spock-solid-light.svg);
 }
 .bottom button.human,
 .score .player.human::before {
-	background-image: url(user-astronaut-solid.svg);
+	background-image: url(user-astronaut-solid-light.svg);
 }
 .bottom button.robot,
 .score .player.robot::before {
-	background-image: url(robot-solid.svg);
+	background-image: url(robot-solid-light.svg);
 }
 .bottom button.rock-paper-scissors {
-	background-image: url(hand-solid.svg);
+	background-image: url(hand-rock-solid-scissors-light.svg);
 }
 .bottom button.rock-paper-scissors-lizard-spock {
-	background-image: url(hand-spock-solid.svg);
+	background-image: url(hand-rock-solid-scissors-lizard-spock-light.svg);
 }
 
 #welcome .title {
