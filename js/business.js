@@ -40,6 +40,10 @@ var Business = {
     },
 
     openVotes: function() {
+        Business.result = [];
+
+        EventSystem.callListeners('vote.open');
+
         Business.players.forEach(player => {
             player.vote();
         });

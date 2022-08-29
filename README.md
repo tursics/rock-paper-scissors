@@ -28,11 +28,13 @@ The game logic defines the number and style of figures, the UI is generic and di
 
 The own event system uses a list of named events:
 
-event name   | description
--------------|------------
-vote.player  |A player has voted
-vote.finish  |All player has voted. It's time for the results
-ui.show.menu.main  |Show the main menu
+event name          | description
+--------------------|------------
+vote.open           |Start a new round
+vote.player         |A player has voted
+vote.finish         |All player has voted. It's time for the results
+vote.close          |Finish the current round
+ui.show.menu.main   |Show the main menu
 ui.show.vote.human  |The local human player should vote
 
 ## compatibility

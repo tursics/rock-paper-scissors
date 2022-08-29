@@ -2,7 +2,6 @@ class PageRoundResult extends Page {
     constructor() {
         super('round-result');
 
-        this.score = this.div.querySelector('.score');
         this.next = this.div.querySelector('.next');
         this.exit = this.div.querySelector('.exit');
 
@@ -12,31 +11,7 @@ class PageRoundResult extends Page {
         EventSystem.addListener('vote.finish', this.onShow);
     }
 
-    getHTML() {
-        var html = '';
-
-        for(var i = 0; i< Business.result.length; ++i) {
-            var playerName = Business.result[i].playerName;
-            var playerClass = Business.result[i].playerClass;
-            var playerFigure = Business.result[i].playerFigure;
-            var score = Business.result[i].score;
-            var result = '';
-
-            if (score === GameLogic.won) {
-                result = 'win';
-            } else if (score === GameLogic.lost) {
-                result = 'loose';
-            } else {
-                result = 'draw';
-            }
-            html += `<div class="player ${playerClass} ${result}"><div class="figure ${playerFigure}"></div></div>`;
-        }
-
-        return html;
-    }
-
     onShow() {
-        UI.pageRoundResult.score.innerHTML = UI.pageRoundResult.getHTML();
         UI.pageRoundResult.show();
     }
 
@@ -47,6 +22,8 @@ class PageRoundResult extends Page {
         window.setTimeout(function() {
             UI.pageRoundResult.hide();
             classList.remove('do');
+
+            EventSystem.callListeners('vote.close');
 
             Business.openVotes();
         }, 400);
@@ -60,6 +37,7 @@ class PageRoundResult extends Page {
             UI.pageRoundResult.hide();
             classList.remove('do');
 
+            EventSystem.callListeners('vote.close');
             EventSystem.callListeners('ui.show.menu.main');
         }, 400);
     }

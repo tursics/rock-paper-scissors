@@ -131,31 +131,31 @@ body {
 	background-image: url(list-solid-light.svg);
 }
 .bottom button.rock,
-.score .figure.rock::before {
+#score .figure.rock::before {
 	background-image: url(hand-back-fist-solid-light.svg);
 }
 .bottom button.paper,
-.score .figure.paper::before {
+#score .figure.paper::before {
 	background-image: url(hand-solid-light.svg);
 }
 .bottom button.scissors,
-.score .figure.scissors::before {
+#score .figure.scissors::before {
 	background-image: url(hand-scissors-solid-light.svg);
 }
 .bottom button.lizard,
-.score .figure.lizard::before {
+#score .figure.lizard::before {
 	background-image: url(hand-lizard-solid-light.svg);
 }
 .bottom button.spock,
-.score .figure.spock::before {
+#score .figure.spock::before {
 	background-image: url(hand-spock-solid-light.svg);
 }
 .bottom button.human,
-.score .player.human::before {
+#score .player.human::before {
 	background-image: url(user-astronaut-solid-light.svg);
 }
 .bottom button.robot,
-.score .player.robot::before {
+#score .player.robot::before {
 	background-image: url(robot-solid-light.svg);
 }
 .bottom button.rock-paper-scissors {
@@ -177,59 +177,58 @@ body {
 	text-align: left;
 }
 
-.score {
+#score {
 	margin: 5vh;
 }
 
-.score .player {
+#score .player {
 	min-height: 4.5rem;
 	padding-left: 4.5rem;
 	position: relative;
 }
-.score .player::before,
-.score .player .figure::before {
-	background-color: #F7C331;
+#score .player::before,
+#score .player .figure::before {
+	background-color: #6B7A8F;
 	background-position: center	center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	border: .5rem solid #F7C331;
+	border: .5rem solid #6B7A8F;
 	border-radius: 50%;
+	box-shadow: 0 0px .2vh .2vh #fff;
 	content: '';
 	left: 0;
 	padding: 1.5rem;
 	position: absolute;
 }
-.score .player.loose::before,
-.score .player.loose::after,
-.score .player.loose .figure::before {
-	background-color: lightcoral;
-	border-color: lightcoral;
+#score .player.loose .figure::before {
+	background-color: #f72f3a;
+	border-color: #f72f3a;
 }
-.score .player.win::before,
-.score .player.win::after,
-.score .player.win .figure::before {
-	background-color: lightgreen;
-	border-color: lightgreen;
+#score .player.win::before,
+#score .player.win .figure::before {
+	background-color: #25c56c;
+	border-color: #25c56c;
 }
-.score .player .figure::before {
-	left: 6rem;
+#score .player .figure::before {
+	left: 6.5rem;
 }
 
-.score .player::after {
-	background-color: #F7C331;
+#score .player::after {
+	background-color: #6B7A8F;
 	border-radius: 50%;
+	box-shadow: 0 0px .2vh .2vh #fff;
 	content: '';
-	left: 4.25rem;
+	left: 4.5rem;
 	padding: .75rem;
 	position: absolute;
 	top: 1.25rem;
 }
 
-.score .player .figure {
+#score .player .figure {
 	display: inline;
 }
 
-.score .player .figure .result {
+#score .player .figure .result {
 }
 
 .move-up {
