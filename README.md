@@ -18,19 +18,22 @@ https://tursics.github.io/rock-paper-scissors/
 ## what device and browser?
 
 I've tested the game on multiple devices.
+It 'should' work on most devices and orientation (the visuals are responsive).
+But some old browsers are not supported by default.
 
-Device  |Browser
-
-- [x] Mac, Chrome
-- [x] Mac, Safari
-- [x] Mac, FF
-- [ ] iPad (altes iPad funktioniert nicht, kein Tap möglich)
-- [x] iPhone (geht, nur Hochformat empfohlen, sieht aber nicht so dolle aus)
-- [x] Android (geht, nur Hochformat empfohlen, sieht aber nicht so dolle aus)
-- [x] Win, Chrome
-- [x] Win, Edge
-- [x] Win, FF
-- [ ] document this in README (incl. screen sizes and rotation)
+Device   |Browser  |Note
+---------|---------|-----
+Windows  |Chrome   |:heavy_check_mark:
+Windows  |Edge     |:heavy_check_mark:
+Windows  |FireFox  |:heavy_check_mark:
+Windows  |Internet Explorer  |No. By default not!
+Mac      |Chrome   |:heavy_check_mark:
+Mac      |Safari   |:heavy_check_mark:
+Mac      |FireFox  |:heavy_check_mark:
+Android Phone  |Chrome   |:heavy_check_mark: best viewed in portrait mode (but is too small already)
+Android Tablet |Chrome   |not tested
+iPhone   |Safari   |:heavy_check_mark: best viewed in portrait mode (but is too small already)
+iPad     |Safari   |tested on a very old safari with a very old browser. Test failed!
 
 ## extendable
 
