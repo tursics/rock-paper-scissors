@@ -61,13 +61,17 @@ Some improvements are done yet, others are still written down.
     - swipe your gesture
     - support game controller
     - XBox gesture support (recocgnize real hand figures)
-  - The game logic supports multiple game sets. Current the 3 figure game and a 5 figure game is implemented
-    - Is it possible to play other games? The current design shows hand figures on cards. Can you play card games with this engine? Is it possible to change the game logic and play Poker?
-  - The game logic defines the number and style of figures, the UI is generic and display the needed elements
-    - change the CSS definition to get a different look and feel
-    - display of 1 to 5 cards are supported, but it's only a styling issue in the CSS to support more
-  - A stub of i18n is implemented. The titels on the cards are translated to German via a dictionary. ToDo: remove all hard coded texts and support multiple languages
-  - use the own event system to support more features like sound effects and music
+
+- The game logic supports multiple game sets. Current the 3 figure game and a 5 figure game is implemented
+  - Is it possible to play other games? The current design shows hand figures on cards. Can you play card games with this engine? Is it possible to change the game logic and play Poker?
+
+- The game logic defines the number and style of figures, the UI is generic and display the needed elements
+  - change the CSS definition to get a different look and feel
+  - display of 1 to 5 cards are supported, but it's only a styling issue in the CSS to support more
+
+- A stub of i18n is implemented. The titels on the cards are translated to German via a dictionary. ToDo: remove all hard coded texts and support multiple languages
+
+- use the own event system to support more features like sound effects and music
 
 ## Event system
 
