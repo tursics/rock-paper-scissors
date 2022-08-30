@@ -24,7 +24,7 @@ Mac      |FireFox  |:heavy_check_mark:
 Android Phone  |Chrome   |:heavy_check_mark: best viewed in portrait mode (but is too small already)
 Android Tablet |Chrome   |not tested
 iPhone   |Safari   |:heavy_check_mark: best viewed in portrait mode (but is too small already)
-iPad     |Safari   |tested on a very old safari with a very old browser. Test failed!
+iPad     |Safari   |:heavy_check_mark: (on a very old iPad 2 the game does not work)
 
 ## Setup
 
