@@ -13,6 +13,25 @@ No npm modules used.
 Just open the HTML file in your browser.
 That's it.
 
+https://tursics.github.io/rock-paper-scissors/
+
+## what device and browser?
+
+I've tested the game on multiple devices.
+
+Device  |Browser
+
+- [x] Mac, Chrome
+- [x] Mac, Safari
+- [x] Mac, FF
+- [ ] iPad (altes iPad funktioniert nicht, kein Tap möglich)
+- [x] iPhone (geht, nur Hochformat empfohlen, sieht aber nicht so dolle aus)
+- [x] Android (geht, nur Hochformat empfohlen, sieht aber nicht so dolle aus)
+- [x] Win, Chrome
+- [x] Win, Edge
+- [x] Win, FF
+- [ ] document this in README (incl. screen sizes and rotation)
+
 ## extendable
 
 The number of players is limited to be exact 2. But the business layer and the game logic supports a minimum of 2 players without a maximum number.
