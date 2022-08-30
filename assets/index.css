@@ -210,7 +210,7 @@ body {
 	border-color: #25c56c;
 }
 #score .player .figure::before {
-	left: 6.5rem;
+	left: 2rem;
 }
 
 #score .player::after {
@@ -226,6 +226,8 @@ body {
 
 #score .player .figure {
 	display: inline;
+	padding: 2.25rem;
+	position: relative;
 }
 
 #score .player .figure .result {

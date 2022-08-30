@@ -2,10 +2,13 @@ class PageScore extends Page {
     constructor() {
         super('score');
 
-        EventSystem.addListener('vote.open', this.onShow);
-        EventSystem.addListener('vote.close', this.onHide);
+        this.scoreboard = [];
+
+        EventSystem.addListener('vote.openGame', this.onShow);
+        EventSystem.addListener('vote.closeGame', this.onHide);
         EventSystem.addListener('vote.player', this.onVotePlayer);
         EventSystem.addListener('vote.finish', this.onVoteFinish);
+        EventSystem.addListener('vote.finish.winner', this.onVoteFinish);
     }
 
     getHTML() {
@@ -14,11 +17,14 @@ class PageScore extends Page {
         for(var i = 0; i< Business.players.length; ++i) {
             var playerName = Business.players[i].title;
             var playerClass = Business.players[i].className;
+            var result = '';
+            var figureHTML = '';
 
-            if (Business.result[i]) {
-                var playerFigure = Business.result[i].playerFigure;
-                var score = Business.result[i].score;
-                var result = '';
+            for (var s = 0; s < UI.pageScore.scoreboard.length; ++s) {
+                var item = UI.pageScore.scoreboard[s];
+
+                var playerFigure = item[i].playerFigure;
+                var score = item[i].score;
 
                 if (score === GameLogic.won) {
                     result = 'win';
@@ -27,16 +33,16 @@ class PageScore extends Page {
                 } else {
                     result = 'draw';
                 }
-                html += `<div class="player ${playerClass} ${result}"><div class="figure ${playerFigure}"></div></div>`;
-            } else {
-                html += `<div class="player ${playerClass}"></div>`;
+                figureHTML += `<div class="figure ${playerFigure}"></div>`;
             }
+            html += `<div class="player ${playerClass} ${result}">${figureHTML}</div>`;
         }
 
         return html;
     }
 
     onShow() {
+        UI.pageScore.scoreboard = [];
         UI.pageScore.div.innerHTML = UI.pageScore.getHTML();
         UI.pageScore.show();
     }
@@ -50,6 +56,7 @@ class PageScore extends Page {
     }
 
     onVoteFinish() {
+        UI.pageScore.scoreboard.push(Business.result);
         UI.pageScore.div.innerHTML = UI.pageScore.getHTML();
     }
 }

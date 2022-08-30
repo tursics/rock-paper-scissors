@@ -8,7 +8,7 @@ class PageRoundResult extends Page {
         this.next.addEventListener('click', this.onNext);
         this.exit.addEventListener('click', this.onExit);
 
-        EventSystem.addListener('vote.finish', this.onShow);
+        EventSystem.addListener('vote.finish.winner', this.onShow);
     }
 
     onShow() {
@@ -23,7 +23,7 @@ class PageRoundResult extends Page {
             UI.pageRoundResult.hide();
             classList.remove('do');
 
-            EventSystem.callListeners('vote.close');
+            EventSystem.callListeners('vote.closeGame');
 
             Business.openVotes();
         }, 400);
@@ -37,7 +37,7 @@ class PageRoundResult extends Page {
             UI.pageRoundResult.hide();
             classList.remove('do');
 
-            EventSystem.callListeners('vote.close');
+            EventSystem.callListeners('vote.closeGame');
             EventSystem.callListeners('ui.show.menu.main');
         }, 400);
     }

@@ -42,8 +42,14 @@ var Business = {
     openVotes: function() {
         Business.result = [];
 
-        EventSystem.callListeners('vote.open');
+        EventSystem.callListeners('vote.openGame');
 
+        Business.players.forEach(player => {
+            player.vote();
+        });
+    },
+
+    openVotesNextRound: function() {
         Business.players.forEach(player => {
             player.vote();
         });
@@ -69,6 +75,7 @@ var Business = {
             var result = Business.gameLogic.validate(...Business.currentRound);
             Business.result = [];
 
+            var hasWinner = false;
             for(var i = 0; i< result.length; ++i) {
                 Business.result.push({
                     playerId: i,
@@ -77,11 +84,19 @@ var Business = {
                     playerFigure: Business.currentRound[i],
                     score: result[i],
                 });
+                if (result[i] === GameLogic.won) {
+                    hasWinner = true;
+                }
             }
 
             Business.currentRound = [];
 
-            EventSystem.callListeners('vote.finish');
+            if (hasWinner) {
+                EventSystem.callListeners('vote.finish.winner');
+            } else {
+                EventSystem.callListeners('vote.finish');
+                Business.openVotesNextRound();
+            }
         }
     },
 };

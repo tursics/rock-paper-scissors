@@ -75,10 +75,11 @@ The own event system uses a list of named events:
 
 event name          | description
 --------------------|------------
-vote.open           |Start a new round
+vote.openGame       |Start a new game
 vote.player         |A player has voted
 vote.finish         |All player has voted. It's time for the results
-vote.close          |Finish the current round
+vote.finish.winner  |All player has voted. There are a winner
+vote.closeGame      |Finish the current game
 ui.show.menu.main   |Show the main menu
 ui.show.vote.human  |The local human player should vote
 
