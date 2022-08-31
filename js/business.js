@@ -31,9 +31,9 @@ var Business = {
         if (filtered.length < 2) {
             console.error('Removed all players');
             Business.players = [];
-        } else if (filtered.length > 2) {
-            console.warn('Limit number of players to 2');
-            Business.players = filtered.splice(0, 2);
+        } else if (filtered.length > 4) {
+            console.warn('Limit number of players to 4');
+            Business.players = filtered.splice(0, 4);
         } else {
             Business.players = filtered;
         }
@@ -44,14 +44,22 @@ var Business = {
 
         EventSystem.callListeners('vote.openGame');
 
-        Business.players.forEach(player => {
-            player.vote();
+        Business.players.forEach((player, index) => {
+            if( Business.gameLogic.canVote(index)) {
+                player.vote();
+            } else {
+                Business.raiseHand(player, GameLogic.voidFigure);
+            }
         });
     },
 
     openVotesNextRound: function() {
-        Business.players.forEach(player => {
-            player.vote();
+        Business.players.forEach((player, index) => {
+            if( Business.gameLogic.canVote(index)) {
+                player.vote();
+            } else {
+                Business.raiseHand(player, GameLogic.voidFigure);
+            }
         });
     },
 

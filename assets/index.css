@@ -150,6 +150,9 @@ body {
 #score .figure.spock::before {
 	background-image: url(hand-spock-solid-light.svg);
 }
+#score .figure.void {
+	display: none !important;
+}
 .bottom button.human,
 #score .player.human::before {
 	background-image: url(user-astronaut-solid-light.svg);
@@ -157,6 +160,12 @@ body {
 .bottom button.robot,
 #score .player.robot::before {
 	background-image: url(robot-solid-light.svg);
+}
+.bottom button.robot-two {
+	background-image: url(robot-two-solid-light.svg);
+}
+.bottom button.robot-three {
+	background-image: url(robot-three-solid-light.svg);
 }
 .bottom button.rock-paper-scissors {
 	background-image: url(hand-rock-solid-scissors-light.svg);

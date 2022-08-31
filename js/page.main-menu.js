@@ -51,7 +51,16 @@ class PageMainMenu extends Page {
         classList.add('do');
 
         window.setTimeout(function() {
-            if (!classList.contains('robot')) {
+            if (classList.contains('robot')) {
+                classList.remove('robot');
+                classList.add('robot-two');
+                UI.pageMainMenu.player2.innerHTML = '<span>2 Computer</span>';
+            } else if (classList.contains('robot-two')) {
+                classList.remove('robot-two')
+                classList.add('robot-three');
+                UI.pageMainMenu.player2.innerHTML = '<span>3 Computer</span>';
+            } else {
+                classList.remove('robot-three')
                 classList.add('robot');
                 UI.pageMainMenu.player2.innerHTML = '<span>Computer</span>';
             }
@@ -79,12 +88,16 @@ class PageMainMenu extends Page {
 
     getPlayerFromClassList(classList) {
         if (classList.contains('human')) {
-            return new PlayerHuman();
+            return [new PlayerHuman()];
         } else if (classList.contains('robot')) {
-            return new PlayerRandom('computer.random');
+            return [new PlayerRandom('computer.random')];
+        } else if (classList.contains('robot-two')) {
+            return [new PlayerRandom('computer.random.1'), new PlayerRandom('computer.random.2')];
+        } else if (classList.contains('robot-three')) {
+            return [new PlayerRandom('computer.random.1'), new PlayerRandom('computer.random.2'), new PlayerRandom('computer.random.3')];
         }
 
-        return null;
+        return [];
     }
 
     getGameLogicFromClassList(classList) {
@@ -110,7 +123,7 @@ class PageMainMenu extends Page {
 
             var player1 = UI.pageMainMenu.getPlayerFromClassList(UI.pageMainMenu.player1.classList);
             var player2 = UI.pageMainMenu.getPlayerFromClassList(UI.pageMainMenu.player2.classList);
-            Business.setPlayers(player1, player2);
+            Business.setPlayers(...player1.concat(player2));
 
             Business.openVotes();
         }, 400);

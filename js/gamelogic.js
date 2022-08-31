@@ -17,6 +17,10 @@ class GameLogic {
         return this.figures.length;
     }
 
+    static get voidFigure() {
+        return 'void';
+    }
+
     getName(figureId) {
         if (figureId < this.figures.length) {
             return this.figures[figureId].name;
@@ -33,6 +37,13 @@ class GameLogic {
         return '';
     }
 
+    canVote(figureId) {
+        if (Business.result.length > 0) {
+            return GameLogic.lost !== Business.result[figureId].score;
+        }
+        return true;
+    }
+
     validateWinFunc(myName, enemyName) {
         return false;
     }
@@ -40,6 +51,10 @@ class GameLogic {
     validate(...figureNames) {
         var maxWon = 0;
         var wins = figureNames.map(myName => {
+            if (GameLogic.voidFigure === myName) {
+                return -1;
+            }
+
             var count = 0;
 
             figureNames.forEach(enemyName => {
