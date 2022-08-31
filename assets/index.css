@@ -200,12 +200,12 @@ body {
 	padding: 1.5rem;
 	position: absolute;
 }
-#score .player.loose .figure::before {
+#score .player .figure.loose::before {
 	background-color: #f72f3a;
 	border-color: #f72f3a;
 }
 #score .player.win::before,
-#score .player.win .figure::before {
+#score .player .figure.win::before {
 	background-color: #25c56c;
 	border-color: #25c56c;
 }

@@ -33,7 +33,7 @@ class PageScore extends Page {
                 } else {
                     result = 'draw';
                 }
-                figureHTML += `<div class="figure ${playerFigure}"></div>`;
+                figureHTML += `<div class="figure ${playerFigure} ${result}"></div>`;
             }
             html += `<div class="player ${playerClass} ${result}">${figureHTML}</div>`;
         }
