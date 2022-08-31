@@ -50,7 +50,7 @@ Or you open the [online version](https://tursics.github.io/rock-paper-scissors/)
 The game is designed in modules and has extendable basic functionality.
 Some improvements are done yet, others are still written down.
 
-- The number of players is limited to be exactly 2. But the business layer and the game logic supports a minimum of 2 players without a maximum number.
+- The number of players is limited to 2 to 4. But the business layer and the game logic supports a minimum of 2 players without a maximum number.
 
 - The player object is extendable. Currently only a computer 'AI' with random choices and a human local player is implemented. But you can write own versions.
   - Add a computer player that act like a human (there are some studies of human psychology playing this game)
